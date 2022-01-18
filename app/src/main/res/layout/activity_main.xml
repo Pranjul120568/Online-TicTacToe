@@ -8,19 +8,30 @@
     android:gravity="center_horizontal"
     android:layout_height="match_parent"
     tools:context=".MainActivity">
-
+<LinearLayout
+    android:layout_width="match_parent"
+    android:orientation="horizontal"
+    android:layout_height="wrap_content">
     <EditText
+        android:layout_weight="1.7"
         android:id="@+id/enterIdEt"
-        android:layout_width="300dp"
-        android:hint="Enter Id For Request"
-        android:layout_height="60dp" />
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_marginTop="1dp"
+        android:layout_width="match_parent"
         android:layout_height="60dp"
-        android:layout_alignParentRight="true"
-        android:layout_marginEnd="20dp"
+        android:hint="Enter Id For Request" />
+
+    <Button
+        android:id="@+id/SendBtn"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:layout_weight="3.19"
         android:text="SEND" />
+    <Button
+        android:id="@+id/RequestBtn"
+        android:layout_weight="2.95"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:text="REQUEST" />
+</LinearLayout>
     <LinearLayout
         android:layout_above="@+id/reset"
         android:id="@+id/ll1"

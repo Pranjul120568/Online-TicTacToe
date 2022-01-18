@@ -39,8 +39,8 @@ class RegisterActivity : AppCompatActivity() {
                 if(it.isSuccessful){
                     Toast.makeText(this,"User created Successfully",Toast.LENGTH_SHORT).show()
 
-                    myRef.child("users").child(auth!!.currentUser!!.uid).setValue(auth!!.currentUser!!.email).addOnFailureListener {
-                        Log.d("HERE",auth!!.currentUser!!.uid+" "+auth!!.currentUser!!.email+" "+it.toString())
+                    myRef.child("users").child(splitString(email)).child("Request").setValue(auth!!.currentUser!!.uid).addOnSuccessListener {
+                        Log.d("HERE",splitString(email)+" "+auth!!.currentUser!!.uid+" "+it.toString())
                     }
                     startActivity(Intent(this,loginActivity::class.java))
                 }else{
@@ -48,5 +48,9 @@ class RegisterActivity : AppCompatActivity() {
                 }
             }
         }
+    }
+    fun splitString(email:String):String{
+        var split=email.split("@")
+        return split[0]
     }
 }
